@@ -4,10 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const input = require("prompt-sync")({ sigint: true });
-const age = input("How old are you? ");
 const Factory = require('./factory');
 const pcBuilder_1 = __importDefault(require("./pcBuilder"));
-// tao id de chon
+// add id de chon
 for (let i = 0; i < Factory.Main.length; i++) {
     Factory.Main[i].id = i + 1;
 }
@@ -32,23 +31,10 @@ const main = input("\n\nPick Mainboard id : ");
 console.log("\n\n\n\n");
 pc.getMain(Factory.Main[main - 1]);
 // check mainboard vs cpu
-if (Factory.Main[main - 1].socket == "A") {
-    const filteredChipList = Factory.Chip.filter((chip) => chip.brand == "AMD");
-    console.log(filteredChipList);
-    const chip = input("\n\nPick Chip id : ");
-    pc.getChip(Factory.Chip[chip - 1]);
-}
-else if (Factory.Main[main - 1].socket == "L") {
-    const filteredChipList = Factory.Chip.filter((chip) => chip.brand == "INTEL");
-    console.log(filteredChipList);
-    const chip = input("\n\nPick Chip id : ");
-    pc.getChip(Factory.Chip[chip - 1]);
-}
-else {
-    console.log(Factory.Chip);
-    const chip = input("\n\nPick Chip id : ");
-    pc.getChip(Factory.Chip[chip - 1]);
-}
+const filteredChipList = Factory.Chip.filter((chip) => Factory.Main[main - 1].socket.includes(chip.ChipToMain()));
+console.log(filteredChipList);
+const chip = input("\n\nPick Chip id : ");
+pc.getChip(Factory.Chip[chip - 1]);
 console.log("\n\n\n\n");
 console.log(Factory.Ram);
 const ram = input("\n\nPick Ram id : ");

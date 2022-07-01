@@ -31,26 +31,12 @@ console.log("\n\n\n\n")
 pc.getMain(Factory.Main[main - 1])
 
 // check mainboard vs cpu
-if ( Factory.Main[main - 1].socket == "A" )
-    {
-    const filteredChipList = Factory.Chip.filter((chip: { brand: string; }) => chip.brand =="AMD")
-    console.log(filteredChipList)
-    const chip : number = input("\n\nPick Chip id : ")
-    pc.getChip(Factory.Chip[chip - 1])
-    } else 
-        if (Factory.Main[main - 1].socket == "L")
-        {
-            const filteredChipList = Factory.Chip.filter((chip: { brand: string; }) => chip.brand =="INTEL")
-            console.log(filteredChipList)
-            const chip : number = input("\n\nPick Chip id : ")
-            pc.getChip(Factory.Chip[chip - 1])
-        } else 
-            { 
-            console.log(Factory.Chip)
-            const chip : number = input("\n\nPick Chip id : ")
-            pc.getChip(Factory.Chip[chip - 1])
-            }
-            
+
+const filteredChipList = Factory.Chip.filter((chip: { ChipToMain: () => any; }) => Factory.Main[main - 1].socket.includes(chip.ChipToMain()))
+console.log(filteredChipList)
+const chip : number = input("\n\nPick Chip id : ")
+pc.getChip(Factory.Chip[chip - 1])
+   
 console.log("\n\n\n\n")      
 console.log(Factory.Ram)
 const ram : number = input("\n\nPick Ram id : ")
