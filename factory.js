@@ -43,9 +43,20 @@ ssdList.push(new MakePart.SSD("SAMSUNG", "870 EVO 500GB", 65));
 ssdList.push(new MakePart.SSD("SAMSUNG", "980 EVO 1TB", 100));
 psuList.push(new MakePart.PSU("CORSAIR", "RMX 750W", 135));
 psuList.push(new MakePart.PSU("CORSAIR", "RMX 850W", 140));
-exports.Ram = ramList;
-exports.Main = mainList;
-exports.Chip = chipList;
-exports.GPU = gpuList;
-exports.SSD = ssdList;
-exports.PSU = psuList;
+class Factory {
+    constructor(m, c, g, r, p, s) {
+        this.Mains = [];
+        this.Chips = [];
+        this.GPUs = [];
+        this.Rams = [];
+        this.PSUs = [];
+        this.SSDs = [];
+        this.Mains = m;
+        this.Chips = c;
+        this.GPUs = g;
+        this.Rams = r;
+        this.PSUs = p;
+        this.SSDs = s;
+    }
+}
+module.exports = new Factory(mainList, chipList, gpuList, ramList, psuList, ssdList);

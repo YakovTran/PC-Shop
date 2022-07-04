@@ -6,6 +6,7 @@ class Part {
         this.price = price;
     }
 }
+//interface ChipToGPU, MainToGPU, ...
 exports.PSU = class PSU extends Part {
 };
 exports.SSD = class SSD extends Part {
@@ -21,7 +22,7 @@ exports.Main = class Main extends Part {
     }
 };
 exports.Chip = class Chip extends Part {
-    ChipToMain() {
+    generate() {
         let r;
         switch (this.brand) {
             case "AMD":

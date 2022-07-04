@@ -51,11 +51,25 @@ ssdList.push(new MakePart.SSD("SAMSUNG","980 EVO 1TB",100))
 psuList.push(new MakePart.PSU("CORSAIR","RMX 750W",135))
 psuList.push(new MakePart.PSU("CORSAIR","RMX 850W",140))
 
+class Factory{
+    Mains = []
+    Chips = []
+    GPUs = []
+    Rams = []
+    PSUs = []
+    SSDs = []
 
-exports.Ram = ramList
-exports.Main = mainList
-exports.Chip = chipList
-exports.GPU = gpuList
-exports.SSD = ssdList
-exports.PSU = psuList
+    constructor ( m : [] , c : [], g : [], r : [],p : [],s :[]){
+        this.Mains = m
+        this.Chips = c
+        this.GPUs = g
+        this.Rams = r
+        this.PSUs = p
+        this.SSDs = s
+    }
+}
+
+module.exports = new Factory(mainList, chipList, gpuList, ramList,psuList,ssdList)
+
+
 
