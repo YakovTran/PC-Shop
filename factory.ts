@@ -7,7 +7,7 @@ var ssdList : any = []
 var psuList : any = []
 var gpuList : any = []
 
-mainList.push(new MakePart.Main("ASUS", "CROSSHAIR VI HERO", "A/L",252))
+mainList.push(new MakePart.Main("ASUS", "CROSSHAIR VI HERO", "A/L",250))
 mainList.push(new MakePart.Main("ASUS", "PRIME X370-PRO", "A/L",130))
 mainList.push(new MakePart.Main("ASUS", "970 PRO GAMING/AURA", "A",255))
 mainList.push(new MakePart.Main("ASUS", "CROSSHAIR V FORMULA-Z","A",144))
