@@ -26,7 +26,7 @@ chipList.push(new MakePart.Chip("INTEL", "Core i5-12600K",280))
 chipList.push(new MakePart.Chip("INTEL", "Core i7-8750H",395))
 chipList.push(new MakePart.Chip("INTEL", "Core i7-12700KF",378))
 chipList.push(new MakePart.Chip("INTEL", "Core i9-9900K",607))
-chipList.push(new MakePart.Chip("INTEL", "Core i9-12900K",589))
+chipList.push(new MakePart.Chip("INTEL", "Core i9-12900K",590))
 
 
 gpuList.push(new MakePart.GPU("NVIDIA", "GeForce RTX 2060",350))
